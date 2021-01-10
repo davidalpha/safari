@@ -9,11 +9,14 @@ onready var sprite = $Sprite
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	pass # Replace with function body.
-
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	$AnimatedSprite.visible = 0
+	$Sprite.visible = 1
 	# Get player input
 	var direction: Vector2
 	direction.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -33,3 +36,10 @@ func _physics_process(delta):
 	elif direction.x > 0:
 		sprite.flip_h = true
 		
+	if Input.is_action_pressed("castRod"):
+		$AnimatedSprite.visible = 1
+		$Sprite.visible = 0
+		if direction.y < 0:
+			$AnimatedSprite.play("fishUp")
+		elif direction.y > 0:
+			$AnimatedSprite.play("fishDown")
