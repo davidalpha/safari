@@ -1,0 +1,47 @@
+New game:
+
+*kies een 'kit'
+voorbeelden:
+- Bughunting set: jar, honey, net
+- Fishing set: rod, bait x 4, spade
+- Game set: trap x 2, 
+- of 2 custom uit elke set
+
+*je hebt 20 actions
+
+*Acties
+-fishing
+-set trap
+-bait trap
+-bait rod
+-dig
+-shake tree
+-'Focus', gebruik een actie om een area te 'scannen', zie:
+	- grass rustling
+	- water bubbels
+	- leaves falling
+
+
+
+* Vang beesten
+-vissen
+-rodents
+-birds
+-insects
+
+*Game over als acties op zijn
+
+
+Game result:
+
+Hiscore is waarde van gevangen beesten
+zeldzaamheid
+
+-set bonus: 3 dezelfde, 3 van dezelfde soort, 3 verschillende, etc
+-chain bonus: voorbeeld: slang gevangen met muis, muis gevangen met beetle
+
+
+
+
+
+

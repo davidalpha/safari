@@ -15,8 +15,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	$AnimatedSprite.visible = 0
-	$Sprite.visible = 1
+	
 	# Get player input
 	var direction: Vector2
 	direction.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -25,6 +24,7 @@ func _physics_process(delta):
 	# If input is digital, normalize it for diagonal movement
 	if abs(direction.x) == 1 and abs(direction.y) == 1:
 		direction = direction.normalized()
+		
 	
 	# Apply movement
 	var movement = speed * direction * delta
@@ -32,9 +32,14 @@ func _physics_process(delta):
 	
 	# sprite direction
 	if direction.x < 0:
-		sprite.flip_h = false
+		$AnimatedSprite.play("duckWalkLeft")
+		#$AnimatedSprites.flip_h = false
 	elif direction.x > 0:
-		sprite.flip_h = true
+		$AnimatedSprite.play("duckWalkRight")
+		#$AnimatedSprites.flip_h = false
+		
+	elif direction.x == 0: 
+		$AnimatedSprite.stop()
 		
 	if Input.is_action_pressed("castRod"):
 		$AnimatedSprite.visible = 1
