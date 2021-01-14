@@ -5,7 +5,7 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 export var speed = 25
-onready var sprite = $Sprite
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,10 +41,9 @@ func _physics_process(delta):
 	elif direction.x == 0: 
 		$AnimatedSprite.stop()
 		
-	if Input.is_action_pressed("castRod"):
-		$AnimatedSprite.visible = 1
-		$Sprite.visible = 0
-		if direction.y < 0:
-			$AnimatedSprite.play("fishUp")
-		elif direction.y > 0:
-			$AnimatedSprite.play("fishDown")
+	if Input.is_action_pressed("listen"):
+		$listenArea.set_monitoring(true)
+		
+
+func _on_listenArea_area_entered(area):
+	print("huh?")
