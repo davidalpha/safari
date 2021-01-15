@@ -106,7 +106,6 @@ speed_scale = 2.0
 
 [node name="listenArea" type="Area2D" parent="."]
 monitoring = false
-monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="listenArea"]
 shape = SubResource( 18 )
