@@ -5,6 +5,7 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 export var speed = 25
+var hook = preload("res://hook.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -43,6 +44,12 @@ func _physics_process(delta):
 		
 	if Input.is_action_pressed("listen"):
 		$listenArea.set_monitoring(true)
+	
+	if Input.is_action_just_pressed("cast"):
+		var hook_inst = hook.instance()
+		hook_inst.set_movement(direction)
+		self.add_child(hook_inst)
+		#hook_inst.move()
 		
 
 func _on_listenArea_area_entered(area):
