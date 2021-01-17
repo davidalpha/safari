@@ -25,14 +25,14 @@ func get_cells_of_type(map, type):
 	return cellsOfIndex
 
 func seed_triggers(tile_array, amount):
-	trigger = trigger.instance()
 	tile_array.shuffle()
 	for i in range(0,amount):
+		var trigger_instance = trigger.instance()
 		print(tile_array[i])
 		var pos_in_px = Vector2($forestTileMap.map_to_world(tile_array[i]))
 		print(pos_in_px)
-		trigger.position = pos_in_px
-		self.add_child(trigger)
+		trigger_instance.position = pos_in_px
+		self.add_child(trigger_instance)
 		
 		
 
