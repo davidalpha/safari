@@ -4,7 +4,7 @@ extends Node2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+onready var player_listen_area = get_node("Game/Player/listen_area")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,4 +17,6 @@ func _ready():
 
 
 func _on_Area2D_area_entered(area):
-	pass
+	if area == player_listen_area:
+	 $Area2D/splash_particle/Particles2D.set_emmiting(true)
+
