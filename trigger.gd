@@ -15,7 +15,5 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
-func _on_Area2D_area_entered(player_listen_area):
-	 $Area2D/splash_particle/Particles2D.set_emitting(true)
-
+func _on_SplashArea_body_entered(player_listen_area):
+	$SplashArea/splash_particle/Particles2D.set_emitting(true)

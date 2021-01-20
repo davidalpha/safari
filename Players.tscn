@@ -88,7 +88,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="ParticlesMaterial" id=18]
+[sub_resource type="ParticlesMaterial" id=17]
 emission_shape = 1
 emission_sphere_radius = 1.0
 flag_disable_z = true
@@ -98,7 +98,7 @@ initial_velocity = 10.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 
-[sub_resource type="CircleShape2D" id=17]
+[sub_resource type="CircleShape2D" id=18]
 radius = 39.3769
 
 [node name="Player" type="KinematicBody2D"]
@@ -121,9 +121,9 @@ monitoring = false
 emitting = false
 amount = 200
 lifetime = 4.0
-process_material = SubResource( 18 )
+process_material = SubResource( 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="listenArea"]
-shape = SubResource( 17 )
+shape = SubResource( 18 )
 [connection signal="area_entered" from="listenArea" to="." method="_on_listenArea_area_entered"]
 [connection signal="body_entered" from="listenArea" to="." method="_on_Area2D_body_entered"]
