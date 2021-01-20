@@ -16,7 +16,6 @@ func _ready():
 #	pass
 
 
-func _on_Area2D_area_entered(area):
-	if area == player_listen_area:
-	 $Area2D/splash_particle/Particles2D.set_emmiting(true)
+func _on_Area2D_area_entered(player_listen_area):
+	 $Area2D/splash_particle/Particles2D.set_emitting(true)
 
