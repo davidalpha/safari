@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/b4efb6c6682b2a808631bf8fbd96d015-sound-wave-icon-by-vexels.png-220498336f64a6e6d2f9694e03255587.stex"
+path="res://.import/weeds_16px.png-9a733062b5337d59d777af0654c7695a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://b4efb6c6682b2a808631bf8fbd96d015-sound-wave-icon-by-vexels.png"
-dest_files=[ "res://.import/b4efb6c6682b2a808631bf8fbd96d015-sound-wave-icon-by-vexels.png-220498336f64a6e6d2f9694e03255587.stex" ]
+source_file="res://weeds_16px.png"
+dest_files=[ "res://.import/weeds_16px.png-9a733062b5337d59d777af0654c7695a.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
