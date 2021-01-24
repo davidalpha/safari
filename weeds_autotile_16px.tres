@@ -1,11 +1,33 @@
-[gd_resource type="TileSet" load_steps=2 format=2]
+[gd_resource type="TileSet" load_steps=4 format=2]
 
 [ext_resource path="res://weeds_16px.png" type="Texture" id=1]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+uniform float hair_vertical_offs = -0.1;
+uniform float hair_horizontal_offs = 0;
+
+void fragment() {
+    float t = TIME;
+    vec2 uv = UV;
+    float uv_x_deform = cos(uv.x);
+    vec2 offs_uv = vec2(cos(t * 0.3 + uv.y * 1.0) + ( uv.x) * ( uv.x) * 0.1, cos(t * 0.1 + uv.x * 0.1) + hair_vertical_offs * (1.2 - uv.x)) * 0.03 * (1.0 - uv.x);
+    
+    vec4 img = texture(TEXTURE, uv + vec2(offs_uv.x, offs_uv.y));
+    COLOR = img;
+    
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/hair_vertical_offs = -0.1
+shader_param/hair_horizontal_offs = 0.0
 
 [resource]
 0/name = "weeds_16px.png 0"
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
+0/material = SubResource( 2 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 80, 48 )
 0/tile_mode = 1
