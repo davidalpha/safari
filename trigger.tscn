@@ -1,10 +1,21 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://splashParticle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://trigger.gd" type="Script" id=2]
+[ext_resource path="res://water_ring_16px.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
+
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item; render_mode unshaded;
+
+void fragment() { 
+
+}"
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
 
 [node name="trigger" type="Node2D"]
 script = ExtResource( 2 )
@@ -15,6 +26,16 @@ script = ExtResource( 2 )
 position = Vector2( -0.25, 0 )
 shape = SubResource( 1 )
 
+[node name="TextureRect" type="TextureRect" parent="SplashArea"]
+material = SubResource( 3 )
+margin_right = 16.0
+margin_bottom = 16.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="splash_particle" parent="SplashArea" instance=ExtResource( 1 )]
+visible = false
 scale = Vector2( 0.25, 0.25 )
 [connection signal="body_entered" from="SplashArea" to="." method="_on_SplashArea_body_entered"]
